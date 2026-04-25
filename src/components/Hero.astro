@@ -1,0 +1,87 @@
+---
+// Hero section
+---
+
+<section class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+  <!-- Gradient background -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--color-primary-900)_0%,_transparent_50%)]"></div>
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-[120px]"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-400/5 rounded-full blur-[100px]"></div>
+
+  <!-- Grid pattern overlay -->
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200H40V40%22%20stroke%3D%22white%22%20stroke-opacity%3D%220.03%22%2F%3E%3C%2Fsvg%3E')] opacity-50"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Left: Text -->
+      <div class="space-y-8">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 border border-primary-500/20 rounded-full">
+          <span class="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></span>
+          <span class="text-sm text-primary-300 font-medium">Aguachica, Cesar — Colombia</span>
+        </div>
+
+        <h1 class="font-[Sora] text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+          <span class="text-white">El empleo</span>
+          <br />
+          <span class="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+            está cerca de ti
+          </span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-gray-400 max-w-xl leading-relaxed">
+          Conectamos <strong class="text-white">buscadores de empleo</strong>,
+          <strong class="text-white">trabajadores independientes</strong> y
+          <strong class="text-white">empleadores</strong> en una sola plataforma — diseñada para Aguachica.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#cta"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 hover:bg-primary-400 text-white font-bold text-base rounded-2xl transition-all hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5 active:scale-95"
+          >
+            Crear mi cuenta gratis
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a
+            href="#features"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-base rounded-2xl transition-all hover:-translate-y-0.5"
+          >
+            Ver funciones
+          </a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="flex items-center gap-6 pt-4">
+          <div class="flex items-center gap-2">
+            <span class="text-accent-400 text-lg">✓</span>
+            <span class="text-sm text-gray-500">100% gratuito</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-accent-400 text-lg">✓</span>
+            <span class="text-sm text-gray-500">Datos seguros</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-accent-400 text-lg">✓</span>
+            <span class="text-sm text-gray-500">Tiempo real</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Mockup -->
+      <div class="relative hidden lg:block">
+        <div class="relative">
+          <!-- Glow behind -->
+          <div class="absolute -inset-4 bg-gradient-to-tr from-primary-500/20 to-accent-400/10 rounded-3xl blur-2xl"></div>
+          <!-- Image -->
+          <img
+            src="/hero-mockup.png"
+            alt="LocalWork — Panel de empleos"
+            class="relative rounded-2xl border border-white/10 shadow-2xl shadow-black/50 w-full"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

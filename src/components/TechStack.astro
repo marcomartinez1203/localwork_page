@@ -1,0 +1,80 @@
+---
+// Tech Stack section
+const stack = [
+  {
+    category: 'Backend',
+    items: [
+      { name: 'Node.js', icon: '🟢', desc: 'Runtime de JavaScript del lado del servidor' },
+      { name: 'Express', icon: '⚡', desc: 'Framework web minimalista y flexible' },
+      { name: 'TypeScript', icon: '🔷', desc: 'JavaScript con tipado estático para código robusto' },
+      { name: 'Zod', icon: '✅', desc: 'Validación de esquemas y datos de entrada' },
+    ],
+  },
+  {
+    category: 'Base de datos & Auth',
+    items: [
+      { name: 'Supabase', icon: '⚙️', desc: 'Backend-as-a-Service con PostgreSQL, Auth y Storage' },
+      { name: 'PostgreSQL', icon: '🐘', desc: 'Base de datos relacional con soporte avanzado de SQL' },
+      { name: 'Supabase Realtime', icon: '📡', desc: 'WebSockets para notificaciones en tiempo real' },
+      { name: 'Supabase Storage', icon: '📁', desc: 'Almacenamiento de archivos (CVs, avatares, logos)' },
+    ],
+  },
+  {
+    category: 'Frontend',
+    items: [
+      { name: 'HTML5 + CSS3', icon: '🎨', desc: 'Maquetación semántica con diseño responsive' },
+      { name: 'JavaScript Vanilla', icon: '📜', desc: 'Lógica del cliente sin dependencias de frameworks' },
+      { name: 'Google Fonts', icon: '🔤', desc: 'Tipografías Sora e Inter para una estética premium' },
+      { name: 'Service Worker', icon: '📱', desc: 'Soporte PWA con caché offline' },
+    ],
+  },
+  {
+    category: 'Seguridad',
+    items: [
+      { name: 'Helmet', icon: '🛡️', desc: 'Headers HTTP de seguridad contra ataques comunes' },
+      { name: 'CORS', icon: '🔒', desc: 'Control de acceso entre dominios' },
+      { name: 'Rate Limiting', icon: '🚦', desc: 'Protección contra abuso y DDoS' },
+      { name: 'RLS (Supabase)', icon: '🔐', desc: 'Row Level Security a nivel de base de datos' },
+    ],
+  },
+];
+---
+
+<section id="tech" class="relative py-24 sm:py-32">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-primary-900)_0%,_transparent_50%)] opacity-20"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-block px-4 py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full text-sm text-primary-400 font-medium mb-6">
+        Tecnología
+      </span>
+      <h2 class="font-[Sora] text-3xl sm:text-4xl font-bold text-white mb-4">
+        Stack tecnológico
+      </h2>
+      <p class="text-lg text-gray-400">
+        Construido con tecnologías modernas, seguras y de código abierto.
+      </p>
+    </div>
+
+    <!-- Stack grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {stack.map((group) => (
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-primary-500/20 transition-colors">
+          <h3 class="font-[Sora] text-lg font-semibold text-primary-400 mb-5">{group.category}</h3>
+          <div class="space-y-4">
+            {group.items.map((item) => (
+              <div class="flex items-start gap-3">
+                <span class="text-xl mt-0.5 flex-shrink-0">{item.icon}</span>
+                <div>
+                  <p class="text-sm font-semibold text-white">{item.name}</p>
+                  <p class="text-xs text-gray-500">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

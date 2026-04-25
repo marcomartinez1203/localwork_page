@@ -1,0 +1,36 @@
+---
+// Navbar component
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-gray-950/80 border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="/logo.png" alt="LocalWork" class="h-9 w-9 rounded-lg" />
+        <span class="font-[Sora] font-bold text-lg text-white group-hover:text-primary-400 transition-colors">
+          LocalWork
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#problem" class="text-sm text-gray-400 hover:text-white transition-colors">Problema</a>
+        <a href="#features" class="text-sm text-gray-400 hover:text-white transition-colors">Funciones</a>
+        <a href="#roles" class="text-sm text-gray-400 hover:text-white transition-colors">Para quién</a>
+        <a href="#tech" class="text-sm text-gray-400 hover:text-white transition-colors">Tecnología</a>
+        <a href="#team" class="text-sm text-gray-400 hover:text-white transition-colors">Equipo</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a
+          href="#cta"
+          class="px-5 py-2.5 bg-primary-500 hover:bg-primary-400 text-white text-sm font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-primary-500/25 active:scale-95"
+        >
+          Empezar ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

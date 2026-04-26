@@ -1,82 +1,85 @@
 ---
-// Roles section
+// Roles — Professional audience segmented cards
 const roles = [
   {
-    emoji: '🔍',
+    badge: 'Para Talento',
     role: 'Buscador de empleo',
     features: [
-      'Explorar y filtrar ofertas por zona, modalidad y categoría',
-      'Postularse con carta de presentación y CV adjunto',
-      'Seguimiento en tiempo real del estado de cada postulación',
-      'Guardar empleos favoritos para revisar después',
-      'Perfil completo con educación, experiencia y habilidades',
-      'Compartir ofertas con amigos y contactos',
+      'Filtros por zona, modalidad y categoría',
+      'Postulación rápida con CV',
+      'Seguimiento en tiempo real',
     ],
-    gradient: 'from-blue-500/20 to-primary-500/20',
-    border: 'hover:border-blue-500/30',
+    bg: 'bg-blue-50',
+    text: 'text-blue-700',
+    border: 'border-blue-200',
+    shadow: 'shadow-blue-900/5',
   },
   {
-    emoji: '👷',
-    role: 'Trabajador independiente',
+    badge: 'Para Independientes',
+    role: 'Trabajadores locales',
     features: [
-      'Perfil público visible en el directorio de trabajadores',
-      'Muestra tus habilidades, disponibilidad y tarifa',
-      'Recibe notificaciones cuando empleadores ven tu perfil',
-      'Acumula calificaciones y construye tu reputación',
-      'Aparece en búsquedas por habilidad y zona',
-      'Conecta directamente con empresas locales',
+      'Perfil en directorio público',
+      'Muestra de habilidades y tarifas',
+      'Reputación y calificaciones',
     ],
-    gradient: 'from-primary-500/20 to-accent-400/20',
-    border: 'hover:border-primary-500/30',
+    bg: 'bg-brand-50',
+    text: 'text-brand-700',
+    border: 'border-brand-200',
+    shadow: 'shadow-brand-900/5',
   },
   {
-    emoji: '💼',
-    role: 'Empleador',
+    badge: 'Para Empresas',
+    role: 'Empleador / Negocio',
     features: [
-      'Dashboard con estadísticas de tus ofertas y postulaciones',
-      'Crear, editar y gestionar ofertas con vencimiento automático',
-      'Revisar candidatos y moverlos en el pipeline de selección',
-      'Perfil de empresa con logo, NIT, dirección y sitio web',
-      'Calificar trabajadores después de contratarlos',
-      'Notificaciones en tiempo real de nuevas postulaciones',
+      'Dashboard estadístico completo',
+      'Gestión de pipeline de candidatos',
+      'Notificaciones instantáneas',
     ],
-    gradient: 'from-accent-400/20 to-yellow-500/20',
-    border: 'hover:border-accent-400/30',
+    bg: 'bg-slate-900',
+    text: 'text-white',
+    border: 'border-slate-800',
+    shadow: 'shadow-slate-900/20',
+    isDark: true,
   },
 ];
 ---
 
-<section id="roles" class="relative py-24 sm:py-32">
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-primary-900)_0%,_transparent_50%)] opacity-20"></div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="inline-block px-4 py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full text-sm text-primary-400 font-medium mb-6">
-        Para quién es
-      </span>
-      <h2 class="font-[Sora] text-3xl sm:text-4xl font-bold text-white mb-4">
-        Una plataforma, tres perfiles
+<section id="roles" class="relative py-24 sm:py-32 bg-slate-50 overflow-hidden">
+  <div class="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+    
+    <div class="reveal mb-16 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.1] mb-4">
+        Una plataforma.<br />
+        <span class="text-slate-400">Hecha para todos.</span>
       </h2>
-      <p class="text-lg text-gray-400">
-        Cada tipo de usuario tiene herramientas diseñadas para sus necesidades.
-      </p>
     </div>
 
-    <!-- Cards -->
-    <div class="grid lg:grid-cols-3 gap-6">
-      {roles.map((role) => (
-        <div class={`relative p-8 rounded-2xl bg-gradient-to-br ${role.gradient} border border-white/[0.06] ${role.border} transition-all duration-300 hover:-translate-y-1`}>
-          <div class="text-4xl mb-4">{role.emoji}</div>
-          <h3 class="font-[Sora] text-xl font-bold text-white mb-6">{role.role}</h3>
-          <ul class="space-y-3">
+    <!-- Cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+      {roles.map((role, i) => (
+        <div class={`reveal reveal-delay-${i + 1} relative p-8 sm:p-10 rounded-[2rem] ${role.bg} ${role.isDark ? '' : 'border'} ${role.border} shadow-lg ${role.shadow} hover:-translate-y-2 transition-transform duration-500 flex flex-col`}>
+          
+          <div class="mb-8">
+            <span class={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-4 ${role.isDark ? 'bg-slate-800 text-slate-300' : 'bg-white shadow-sm ' + role.text}`}>
+              {role.badge}
+            </span>
+            <h3 class={`text-2xl font-extrabold ${role.isDark ? 'text-white' : 'text-slate-900'}`}>{role.role}</h3>
+          </div>
+
+          <ul class="space-y-4 mb-8 flex-1">
             {role.features.map((f) => (
-              <li class="flex items-start gap-3 text-sm text-gray-300">
-                <span class="text-accent-400 mt-0.5 flex-shrink-0">✓</span>
+              <li class={`flex items-start gap-3 text-sm ${role.isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                <svg class={`w-5 h-5 flex-shrink-0 mt-0.5 ${role.isDark ? 'text-brand-400' : role.text}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                 <span>{f}</span>
               </li>
             ))}
           </ul>
+
+          <a href="#cta" class={`mt-auto inline-flex items-center justify-between w-full py-3 px-5 rounded-xl font-medium transition-colors ${role.isDark ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'}`}>
+            Explorar
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+          </a>
+
         </div>
       ))}
     </div>

@@ -1,58 +1,59 @@
 ---
-// How it works section
+// How it works — Clean horizontal steps
 const steps = [
   {
     number: '01',
     title: 'Crea tu cuenta',
-    description: 'Regístrate como buscador de empleo o como empleador. Solo necesitas un correo y una contraseña.',
-    accent: 'from-primary-500 to-primary-400',
+    description: 'Registro simple en segundos. Como buscador de empleo o como empresa empleadora.',
+    icon: 'user-plus',
   },
   {
     number: '02',
-    title: 'Completa tu perfil',
-    description: 'Agrega tu experiencia, habilidades, educación y sube tu hoja de vida para que los empleadores te encuentren.',
-    accent: 'from-primary-400 to-accent-400',
+    title: 'Completa el perfil',
+    description: 'Sube tu hoja de vida o llena el formulario. Muestra tus habilidades al mundo.',
+    icon: 'document-text',
   },
   {
     number: '03',
-    title: 'Conecta con oportunidades',
-    description: 'Explora ofertas, postúlate con un clic, o publica vacantes y recibe candidatos en tu dashboard.',
-    accent: 'from-accent-400 to-yellow-400',
+    title: 'Haz match',
+    description: 'Explora vacantes, recibe postulaciones y conecta directamente por la plataforma.',
+    icon: 'sparkles',
   },
 ];
 ---
 
-<section id="how-it-works" class="relative py-24 sm:py-32">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="inline-block px-4 py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full text-sm text-primary-400 font-medium mb-6">
-        Cómo funciona
-      </span>
-      <h2 class="font-[Sora] text-3xl sm:text-4xl font-bold text-white mb-4">
-        Tres pasos para empezar
+<section id="how-it-works" class="relative py-24 sm:py-32 bg-white overflow-hidden border-y border-slate-100">
+  <div class="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+    
+    <div class="reveal mb-16 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+        Diseñado para ser <span class="text-brand-600">intuitivo</span>.
       </h2>
-      <p class="text-lg text-gray-400">
-        Sin complicaciones. Sin costos. Empieza a conectar hoy.
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Empieza a conectar con el ecosistema laboral de Aguachica en tres pasos simples.
       </p>
     </div>
 
     <!-- Steps -->
-    <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-      {steps.map((step, i) => (
-        <div class="relative text-center group">
-          {/* Connector line */}
-          {i < steps.length - 1 && (
-            <div class="hidden md:block absolute top-12 left-[60%] w-[80%] h-px bg-gradient-to-r from-white/10 to-transparent"></div>
-          )}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
+      <!-- Desktop connector line -->
+      <div class="hidden md:block absolute top-12 left-[15%] right-[15%] h-[2px] bg-slate-100"></div>
 
-          <div class={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${step.accent} text-white font-[Sora] text-2xl font-bold mb-6 shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform duration-300`}>
-            {step.number}
+      {steps.map((step, i) => (
+        <div class={`reveal reveal-delay-${i + 1} relative group text-center`}>
+          <!-- Icon Circle -->
+          <div class="relative w-24 h-24 mx-auto mb-8 bg-white rounded-full flex items-center justify-center border-[6px] border-white shadow-soft z-10 group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-brand-50 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+            <span class="relative z-10 text-2xl font-bold text-slate-400 group-hover:text-brand-600 transition-colors duration-300">
+              {step.number}
+            </span>
           </div>
-          <h3 class="font-[Sora] text-xl font-semibold text-white mb-3">{step.title}</h3>
-          <p class="text-gray-400 leading-relaxed max-w-xs mx-auto">{step.description}</p>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+          <p class="text-slate-600 leading-relaxed max-w-sm mx-auto">{step.description}</p>
         </div>
       ))}
     </div>
+
   </div>
 </section>

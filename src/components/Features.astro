@@ -1,65 +1,78 @@
 ---
-// Features section
+// Features — Clean Premium Bento Grid
 const features = [
   {
     icon: '🔍',
     title: 'Búsqueda inteligente',
-    description: 'Filtra por modalidad, categoría, zona y salario. Búsqueda sin acentos para encontrar lo que necesitas al instante.',
+    description: 'Encuentra oportunidades exactas con filtros avanzados de zona, modalidad y salario. Resultados al instante.',
   },
   {
     icon: '📄',
     title: 'Postulación con CV',
-    description: 'Envía tu hoja de vida en PDF o Word directamente desde la plataforma con carta de presentación.',
+    description: 'Envía tu perfil completo en un clic.',
   },
   {
     icon: '🔔',
-    title: 'Notificaciones en tiempo real',
-    description: 'Recibe alertas instantáneas cuando alguien se postula, cambia el estado o visita tu perfil.',
+    title: 'Alertas en tiempo real',
+    description: 'Recibe notificaciones inmediatas.',
   },
   {
     icon: '⭐',
-    title: 'Sistema de calificaciones',
-    description: 'Los empleadores califican trabajadores y viceversa. Construye tu reputación en la plataforma.',
+    title: 'Reputación',
+    description: 'Sistema de calificaciones mutuas.',
   },
   {
     icon: '📊',
-    title: 'Dashboard de empleador',
-    description: 'Panel de control con estadísticas, gestión de ofertas y pipeline de candidatos.',
+    title: 'Gestión centralizada',
+    description: 'Un dashboard intuitivo para empleadores con embudos de selección visuales.',
   },
   {
     icon: '🌙',
-    title: 'Modo oscuro nativo',
-    description: 'Interfaz adaptable a tu preferencia visual con persistencia automática.',
+    title: 'Experiencia Nativa',
+    description: 'Diseño ultra rápido que se adapta perfectamente a dispositivos móviles y computadoras.',
   },
+];
+
+const gridClasses = [
+  'md:col-span-7',   // wide
+  'md:col-span-5',   // square
+  'md:col-span-4',   // square
+  'md:col-span-4',   // square
+  'md:col-span-4',   // square
+  'md:col-span-12',  // banner
 ];
 ---
 
-<section id="features" class="relative py-24 sm:py-32">
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--color-primary-900)_0%,_transparent_60%)] opacity-30"></div>
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="inline-block px-4 py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full text-sm text-primary-400 font-medium mb-6">
-        Funcionalidades
-      </span>
-      <h2 class="font-[Sora] text-3xl sm:text-4xl font-bold text-white mb-4">
-        Todo lo que necesitas en un solo lugar
+<section id="features" class="relative py-24 sm:py-32 bg-slate-50 overflow-hidden">
+  <div class="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+    
+    <div class="reveal mb-12 md:mb-16 text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.1] mb-4">
+        Herramientas de <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-teal-500">nivel empresarial</span>.
       </h2>
-      <p class="text-lg text-gray-400">
-        Herramientas diseñadas para simplificar la búsqueda de empleo y la gestión de talento en Aguachica.
+      <p class="text-lg text-slate-600">
+        Construimos funcionalidades robustas en una interfaz limpia para que te enfoques en lo que importa: el talento.
       </p>
     </div>
 
-    <!-- Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {features.map((feature) => (
-        <div class="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-primary-500/30 transition-all duration-300 hover:-translate-y-1">
-          <div class="text-3xl mb-4">{feature.icon}</div>
-          <h3 class="font-[Sora] text-lg font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors">
-            {feature.title}
-          </h3>
-          <p class="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
+    <!-- Premium Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+      {features.map((feature, i) => (
+        <div class={`reveal reveal-delay-${Math.min(i + 1, 5)} ${gridClasses[i]} group relative p-8 bg-white rounded-3xl shadow-sm border border-slate-200 hover:shadow-hover transition-all duration-500 hover:-translate-y-1 overflow-hidden ${i === 5 ? 'flex flex-col sm:flex-row sm:items-center gap-6' : ''}`}>
+          
+          <div class={`w-14 h-14 rounded-2xl bg-slate-50 text-slate-700 flex items-center justify-center text-2xl mb-6 shadow-sm border border-slate-100 group-hover:bg-brand-50 group-hover:text-brand-600 group-hover:border-brand-100 transition-colors duration-300 ${i === 5 ? 'mb-0' : ''}`}>
+            {feature.icon}
+          </div>
+
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              {feature.title}
+            </h3>
+            <p class="text-slate-600 leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+
         </div>
       ))}
     </div>
